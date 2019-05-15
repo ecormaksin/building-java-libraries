@@ -275,18 +275,18 @@ $ cd building-java-libraries</pre>
 <div class="listingblock multi-language-sample">
 <div class="title">If you prefer the Groovy DSL</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">$ gradle init --type java-library --project-name jvm-library
+<pre class="prettyprint highlight"><code class="language-groovy" data-lang="groovy">$ gradle init --type java-library --package guidesamples
 &gt; Task :wrapper
 &gt; Task :init
 
-BUILD SUCCESSFUL in 4s
+BUILD SUCCESSFUL in 5s
 2 actionable tasks: 2 executed</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
 <div class="title">If you prefer the Kotlin DSL</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">$ gradle init --type java-library --project-name jvm-library --dsl kotlin
+<pre class="prettyprint highlight"><code class="language-kotlin" data-lang="kotlin">$ gradle init --type java-library --package guidesamples --dsl kotlin
 &gt; Task :wrapper
 &gt; Task :init
 
@@ -312,10 +312,12 @@ BUILD SUCCESSFUL in 0s
 └── src
     ├── main
     │   └── java <i class="conum" data-value="2"></i><b>(2)</b>
-    │       └── Library.java
+    │       └── guidesamples
+    │           └── Library.java
     └── test
         └── java <i class="conum" data-value="3"></i><b>(3)</b>
-            └── LibraryTest.java</code></pre>
+            └── guidesamples
+                └── LibraryTest.java</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
@@ -333,10 +335,12 @@ BUILD SUCCESSFUL in 0s
 └── src
     ├── main
     │   └── java <i class="conum" data-value="2"></i><b>(2)</b>
-    │       └── Library.java
+    │       └── guidesamples
+    │           └── Library.java
     └── test
         └── java <i class="conum" data-value="3"></i><b>(3)</b>
-            └── LibraryTest.java</code></pre>
+            └── guidesamples
+                └── LibraryTest.java</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -453,12 +457,12 @@ dependencies {
 <p>The build script adds the <a href="https://docs.gradle.org/5.4.1/userguide/java_library_plugin.html">java-library</a> plugin. This is an extension of the <code>java-base</code> plugin and adds additional tasks for compiling Java source code.</p>
 </div>
 <div class="paragraph">
-<p>The file <code>src/main/java/jvm/library/Library.java</code> is shown here:</p>
+<p>The file <code>src/main/java/guidesamples/Library.java</code> is shown here:</p>
 </div>
 <div class="listingblock">
 <div class="title">Generated src/main/java/Library.java</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package jvm.library;
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package guidesamples;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -468,12 +472,12 @@ public class Library {
 </div>
 </div>
 <div class="paragraph">
-<p>The generated JUnit specification, <code>src/test/java/jvm/library/LibraryTest.java</code> is shown next:</p>
+<p>The generated JUnit specification, <code>src/test/java/guidesamples/LibraryTest.java</code> is shown next:</p>
 </div>
 <div class="listingblock">
 <div class="title">Generated  src/test/java/LibraryTest.java</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package jvm.library;
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package guidesamples;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -512,7 +516,7 @@ public class LibraryTest {
 &gt; Task :check
 &gt; Task :build
 
-BUILD SUCCESSFUL in 10s
+BUILD SUCCESSFUL in 11s
 4 actionable tasks: 4 executed</pre>
 </div>
 </div>
@@ -685,7 +689,7 @@ Implementation-Version: 0.1.0</code></pre>
 <div class="listingblock">
 <div class="title">src/main/java/Library.java</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package jvm.library;
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">package guidesamples;
 
 public class Library {
     public boolean someLibraryMethod() {
